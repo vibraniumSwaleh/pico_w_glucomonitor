@@ -92,6 +92,7 @@ void Delay_us(UDOUBLE xus)
 void Dev_Module_Init(){
     stdio_init_all(); //Initialize stdio/uart for output display
 
+    // SPI pins number
     PIN_SPI_CS 9
     PIN_SPI_SCK 10
     PIN_SPI_MOSI 11
