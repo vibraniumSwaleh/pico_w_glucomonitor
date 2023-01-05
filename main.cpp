@@ -1,13 +1,11 @@
 #include <iostream>
-#include "pico/stdlib.h"
-#include "hardware/spi.h"
-#include "SPI_Config.h"
+#include "EPD_Test.h"
 
 int main(){
-      
-    Dev_Module_Init();
+    OLED_1in3_C_test();
+    // Dev_Module_Init();
     
-    cout << " We are setting up SPI ...\n";
+    // cout << " We are setting up SPI ...\n";
     
     return 0;
 }

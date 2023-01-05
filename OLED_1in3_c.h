@@ -30,30 +30,30 @@
 #ifndef __OLED_1IN3_C_H
 #define __OLED_1IN3_C_H		
 
-#include "DEV_Config.h"
+#include "SPI_Config.h"
 
 /********************************************************************************
 function:	
 		Define the full screen height length of the display
 ********************************************************************************/
 #define USE_SPI 1
-#define USE_IIC 0
+// #define USE_IIC 0
 
-#define IIC_CMD        0X00
-#define IIC_RAM        0X40
+// #define IIC_CMD        0X00
+// #define IIC_RAM        0X40
 
 
 #define OLED_1in3_C_WIDTH  128//OLED width
 #define OLED_1in3_C_HEIGHT 64 //OLED height
 
-#define OLED_CS_0      DEV_Digital_Write(EPD_CS_PIN,0)
-#define OLED_CS_1      DEV_Digital_Write(EPD_CS_PIN,1)
+#define OLED_CS_0      Pin_Write(PIN_SPI_CS,0)
+#define OLED_CS_1      Pin_Write(PIN_SPI_CS,1)
 
-#define OLED_RST_0      DEV_Digital_Write(EPD_RST_PIN,0)
-#define OLED_RST_1      DEV_Digital_Write(EPD_RST_PIN,1)
+#define OLED_RST_0      Pin_Write(PIN_SPI_RST,0)
+#define OLED_RST_1      Pin_Write(PIN_SPI_RST,1)
 
-#define OLED_DC_0       DEV_Digital_Write(EPD_DC_PIN,0)
-#define OLED_DC_1       DEV_Digital_Write(EPD_DC_PIN,1)
+#define OLED_DC_0       Pin_Write(PIN_SPI_DC,0)
+#define OLED_DC_1       Pin_Write(PIN_SPI_DC,1)
 
 
 void OLED_1in3_C_Init(void);

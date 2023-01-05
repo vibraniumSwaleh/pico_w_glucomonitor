@@ -1,7 +1,6 @@
 #ifndef _SPI_CONFIG_
 #define _SPI_CONFIG_
 
-#include <iostream>
 #include "pico/stdlib.h"
 #include "hardware/spi.h" 
 
@@ -15,9 +14,11 @@
 /**
  * GPIOI config
 **/
-extern int PIN_SPI_CS 
-extern int PIN_SPI_SCK 
-extern int PIN_SPI_MOSI 
+extern int PIN_OLED_RST;
+extern int PIN_OLED_DC;
+extern int PIN_SPI_CS;
+extern int PIN_SPI_SCK;
+extern int PIN_SPI_MOSI;
 
 /**
  * SPI write functions

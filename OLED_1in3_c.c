@@ -34,19 +34,19 @@
 function:
 			Hardware reset
 *******************************************************************************/
-static void I2C_Write_Byte( uint8_t Value,uint8_t reg)
-{
-    DEV_I2C_Write(0x3c, reg, Value);
-}
+// static void I2C_Write_Byte( uint8_t Value,uint8_t reg)
+// {
+//     DEV_I2C_Write(0x3c, reg, Value);
+// }
 
 static void OLED_Reset(void)
 {
     OLED_RST_1;
-    DEV_Delay_ms(100);
+    Delay_ms(100);
     OLED_RST_0;
-    DEV_Delay_ms(100);
+    Delay_ms(100);
     OLED_RST_1;
-    DEV_Delay_ms(100);
+    Delay_ms(100);
 }
 
 /*******************************************************************************
@@ -58,7 +58,7 @@ static void OLED_WriteReg(uint8_t Reg)
 #if USE_SPI
     OLED_DC_0;
     OLED_CS_0;
-    DEV_SPI_WriteByte(Reg);
+    SPI_WriteByte(Reg);
     OLED_CS_1;
 #elif USE_IIC
     I2C_Write_Byte(Reg,IIC_CMD);
@@ -70,7 +70,7 @@ static void OLED_WriteData(uint8_t Data)
 #if USE_SPI
     OLED_DC_1;
     OLED_CS_0;
-    DEV_SPI_WriteByte(Data);
+    SPI_WriteByte(Data);
     OLED_CS_1;
 #elif USE_IIC
     I2C_Write_Byte(Data,IIC_RAM);
@@ -133,7 +133,7 @@ void OLED_1in3_C_Init()
 
     //Set the initialization register
     OLED_InitReg();
-    DEV_Delay_ms(200);
+    Delay_ms(200);
 
     //Turn on the OLED display
     OLED_WriteReg(0xaf);
